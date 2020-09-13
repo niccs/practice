@@ -6,6 +6,7 @@ import NotesApp from "./components/NotesApp";
 import Search from "./components/Search";
 import GetCountryName from "./components/GetCountryName";
 import DrawnFootballMatches from "./components/DrawnFootballMatches";
+import Dropdown from "./components/Dropdown";
 
 function App({ ARTICLES, SLIDES }) {
   return (
@@ -15,7 +16,8 @@ function App({ ARTICLES, SLIDES }) {
       {/* <NotesApp /> */}
       {/* <Search /> */}
       {/* <GetCountryName /> */}
-      <DrawnFootballMatches />
+      {/* <DrawnFootballMatches /> */}
+      <Dropdown />
     </div>
   );
 }

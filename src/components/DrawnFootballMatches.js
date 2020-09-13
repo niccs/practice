@@ -10,13 +10,23 @@ const DrawnFootballMatches = ({ inputYear }) => {
   }, []);
 
   const fetchFromAPIAxios = async (noOfGoals) => {
+    // let res = await axios.get(
+    //   "https://jsonmock.hackerrank.com/api/football_matches?" +
+    //     new URLSearchParams({
+    //       year: year,
+    //       team1goals: noOfGoals,
+    //       team2goals: noOfGoals,
+    //     })
+
     let res = await axios.get(
-      "https://jsonmock.hackerrank.com/api/football_matches?" +
-        new URLSearchParams({
+      "https://jsonmock.hackerrank.com/api/football_matches",
+      {
+        params: {
           year: year,
           team1goals: noOfGoals,
           team2goals: noOfGoals,
-        })
+        },
+      }
     );
     return res.data;
   };
