@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NotesService } from "./services/NotesServiceWithFetch";
+import NotesContext from "./contexts/NotesContext";
 
-const NotesAddForm = ({ dispatch }) => {
+const NotesAddForm = () => {
   const [title, setTitle] = useState("");
   const [noteText, setNoteText] = useState("");
+
+  const { dispatch } = useContext(NotesContext);
 
   const addNoteHandler = async () => {
     let payload = { title, text: noteText };

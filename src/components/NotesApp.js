@@ -3,6 +3,7 @@ import NotesList from "./NotesList";
 import NotesAddForm from "./NotesAddForm";
 import NotesReducer from "./reducers/NotesReducer";
 import { NotesService } from "./services/NotesServiceWithFetch";
+import NotesContext from "./contexts/NotesContext";
 
 const NotesApp = ({ initialCount }) => {
   const [notes, dispatch] = useReducer(NotesReducer, []);
@@ -23,14 +24,14 @@ const NotesApp = ({ initialCount }) => {
   }, []);
 
   return (
-    <div>
+    <NotesContext.Provider value={{ notes, dispatch }}>
       {/* <button onClick={() => setCount(count + 1)}>Add</button>
       <button onClick={() => setCount(count - 1)}>Subtract</button>
       <p> The count is {count}</p> */}
 
       <NotesList notes={notes} dispatch={dispatch} />
       <NotesAddForm dispatch={dispatch} />
-    </div>
+    </NotesContext.Provider>
   );
 };
 

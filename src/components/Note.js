@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import { NotesService } from "./services/NotesServiceWithFetch";
-const Note = ({ note, dispatch }) => {
+import NotesContext from "./contexts/NotesContext";
+const Note = ({ note }) => {
+  const { dispatch } = useContext(NotesContext);
+
   const onRemove = async (id) => {
     console.log("Note to be removed", id);
 

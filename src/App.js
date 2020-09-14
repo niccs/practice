@@ -14,12 +14,12 @@ function App({ ARTICLES, SLIDES }) {
     <div className="App">
       {/* <Slides slides={SLIDES} /> */}
       {/* <Articles articles={ARTICLES} /> */}
-      {/* <NotesApp /> */}
+      <NotesApp />
       {/* <Search /> */}
       {/* <GetCountryName /> */}
       {/* <DrawnFootballMatches /> */}
       {/* <Dropdown /> */}
-      <PostList />
+      {/* <PostList /> */}
     </div>
   );
 }
