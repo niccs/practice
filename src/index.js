@@ -4,6 +4,11 @@ import "./index.css";
 import App from "./App";
 import { ARTICLES, SLIDES } from "./data";
 import * as serviceWorker from "./serviceWorker";
+import thunk from "redux-thunk";
+
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import reducers from "./components/reducers";
 
 const AppForArrayFunctions = () => {
   // let sortWithMostRecent = () => {
@@ -56,7 +61,11 @@ ReactDOM.render(
   <React.StrictMode>
     <>
       {/* <AppForArrayFunctions /> */}
-      <App ARTICLES={ARTICLES} SLIDES={SLIDES} />
+      {/* <App ARTICLES={ARTICLES} SLIDES={SLIDES} /> */}
+
+      <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+        <App />
+      </Provider>
     </>
   </React.StrictMode>,
   document.getElementById("root")

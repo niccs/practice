@@ -7,6 +7,7 @@ import Search from "./components/Search";
 import GetCountryName from "./components/GetCountryName";
 import DrawnFootballMatches from "./components/DrawnFootballMatches";
 import Dropdown from "./components/Dropdown";
+import PostList from "./components/PostList";
 
 function App({ ARTICLES, SLIDES }) {
   return (
@@ -17,7 +18,8 @@ function App({ ARTICLES, SLIDES }) {
       {/* <Search /> */}
       {/* <GetCountryName /> */}
       {/* <DrawnFootballMatches /> */}
-      <Dropdown />
+      {/* <Dropdown /> */}
+      <PostList />
     </div>
   );
 }
